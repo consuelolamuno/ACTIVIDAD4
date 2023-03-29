@@ -28,17 +28,13 @@ public class operaciones_basicas_matematicas {
 		
 			if (num1>=0 && num2>=0)	//CONDICIONAMOS QUE LOS CALCULOS SE REALICEN CON DOS NUMEROS DE ENTRADA POSITIVOS
 			{
-				//REALIZAMOS LOS CALCULOS DE LAS OPERACIONES BASICAS MATEMÁTICAS
-				suma = num1 + num2;
-				resta = num1 - num2;
-				multiplicacion = num1 * num2;
-				double division = (double) num1 / num2; //DECLARAMOS EN LA PROPIA OPERACION LA VARIABLE PARA PODER OBTENER UN RESULTADO DECIMAL
+				//LLAMAMOS A LOS METODOS CREADOS EN LA PARTE INFERIOR DEL CODIGO
+				suma = metodo_suma(num1, num2);
+				resta = metodo_resta(num1, num2);
+				multiplicacion = metodo_multiplicacion(num1, num2);
+				double division = metodo_division(num1, num2); 
 				
-				//IMPRIMIMOS LOS RESULTADOS POR CONSOLA EN LINEAS DISTINTAS POR ESO "PRINTLN"
-				System.out.println("La suma es:" + suma);
-				System.out.println("La resta es:" + resta);
-				System.out.println("La multiplicación es:" + multiplicacion);
-				System.out.println("La división es:" + division);			
+				metodo_visualizacion_resultados(suma, resta, multiplicacion, division);			
 			}
 			else //SI NO SE DAN LAS CONDICIONES DE ENTRADA SE IMPRIME EL SIGUIENTE MENSAJE
 				
@@ -53,5 +49,67 @@ public class operaciones_basicas_matematicas {
 		}
 		
 	} //FIN DE METODO DE INICIALIZACION
+	
+	/**
+	 * <h2>Método de visualización de resultado</h2>
+	 * Muestra por consola los resultado obtenidos en los parametos suma, resta, multiplicación y división.
+	 * @param suma
+	 * @param resta
+	 * @param multiplicacion
+	 * @param division
+	 */
+	private static void metodo_visualizacion_resultados(int suma, int resta, int multiplicacion, double division) {
+		System.out.println("La suma es:" + suma);
+		System.out.println("La resta es:" + resta);
+		System.out.println("La multiplicación es:" + multiplicacion);
+		System.out.println("La división es:" + division);
+	}
+
+	/**
+	 * <h2>Método de división</h2>
+	 * @param num1
+	 * @param num2
+	 * @return Devuelve el cociente de los numeros 1 y 2.
+	 */
+	private static double metodo_division(int num1, int num2) {
+		double division = (double) num1 / num2;
+		return division;
+	}
+
+	/**
+	 * <h2>Método de multiplicación</h2>
+	 * @param num1
+	 * @param num2
+	 * @return Devuelve el producto de los numeros 1 y 2.
+	 */
+	private static int metodo_multiplicacion(int num1, int num2) {
+		int multiplicacion;
+		multiplicacion = num1 * num2;
+		return multiplicacion;
+	}
+
+	/**
+	 * <h2>Método de resta</h2>
+	 * @param num1
+	 * @param num2
+	 * @return Devuelve la diferencia de los numeros 1 y 2.
+	 */
+	private static int metodo_resta(int num1, int num2) {
+		int resta;
+		resta = num1 - num2;
+		return resta;
+	}
+
+	/**
+	 * <h2>Método de suma</h2>
+	 * @param num1
+	 * @param num2
+	 * @return Devuelve la suma de los numeros 1 y 2.
+	 */
+	private static int metodo_suma(int num1, int num2) {
+		int suma;
+		suma = num1 + num2;
+		return suma;
+	}
 	
 } //FIN DE LA CLASE
